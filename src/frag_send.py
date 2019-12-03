@@ -247,7 +247,7 @@ class FragmentNoAck(FragmentBase):
             w_w,
             w_fcn
             ))
-        dtrace ("|----{:3}------------->".format(len(schc_frag.packet._content)))
+        dtrace ("|----{:10}------------->".format(len(schc_frag.packet._content)))
 
         self.protocol.scheduler.add_event(0, self.protocol.layer2.send_packet,
                                           args)
@@ -460,9 +460,9 @@ class FragmentAckOnError(FragmentBase):
             if mic is not None:
                 dprint("mic is not None")
                 # set ack waiting timer
-                if enable_statsct:
-                   Statsct.set_msg_type("SCHC_FRAG")
-                   Statsct.set_header_size(frag_msg.get_sender_header_size(self.rule))
+                # if enable_statsct:
+                #    Statsct.set_msg_type("SCHC_FRAG")
+                #    Statsct.set_header_size(frag_msg.get_sender_header_size(self.rule))
                 args = (schc_frag, window_tiles[0]["w-num"],)
                 dprint("all ones")
                 self.schc_all_1 = schc_frag

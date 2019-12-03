@@ -7,10 +7,7 @@ The stats are write to a file
 """
 #import collections.defaultdict as defaultdict
 
-try:
-    from ucollections import defaultdict
-except ImportError:
-    from collections import defaultdict
+
 
 
 try:

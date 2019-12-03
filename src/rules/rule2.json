@@ -1,0 +1,20 @@
+[{
+   "RuleID" : 12,
+   "RuleIDLength" : 4,
+   "Compression" : []
+ },{
+  "RuleID" : 12,
+  "RuleIDLength" : 6,
+  "Fragmentation": {
+    "FRMode": "ackOnError",
+    "FRModeProfile": {
+        "dtagSize": 2,
+        "WSize":4,
+        "FCNSize": 3,
+        "ackBehavior": "afterAll1",
+        "tileSize": 10,
+        "MICAlgorithm": "crc32",
+        "MICWordSize": 8
+    }
+}
+}]

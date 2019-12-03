@@ -236,9 +236,9 @@ class ReassemblerAckOnError(ReassembleBase):
 
     def receive_frag(self, bbuf, dtag):
 
-        dprint('state: {}, recieved fragment -> {}, rule-> {}'.format(self.state,
+        dprint('state: {}, received fragment -> {}, rule-> {}'.format(self.state,
                                                                      bbuf, self.rule))
-
+        input("")
         schc_frag = frag_msg.frag_receiver_rx(self.rule, bbuf)
         dprint("receiver frag received:", schc_frag.__dict__)
         # XXX how to authenticate the message from the peer. without
@@ -387,7 +387,7 @@ class ReassemblerAckOnError(ReassembleBase):
         elif schc_frag.fcn == frag_msg.get_fcn_all_1(self.rule):
             dprint("----------------------- ALL1 received -----------------------")
             self.all1_received = True
-            Statsct.set_msg_type("SCHC_ALL_1")
+            #Statsct.set_msg_type("SCHC_ALL_1")
             self.mic_received = schc_frag.mic
             schc_packet, mic_calced = self.get_mic_from_tiles_received()
             dprint("schc_frag.mic: {}, mic_calced: {}".format(schc_frag.mic, mic_calced))

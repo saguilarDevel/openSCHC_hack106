@@ -1,0 +1,556 @@
+{'callback_name': 'schc_send',
+ 'class_name': 'SCHCProtocol',
+ 'clock': 1,
+ 'event': 'sim-start',
+ 'event-id': 0,
+ 'log': ['0 [sim] add-link 0->1',
+         '0 [sim] add-link 1->0',
+         '0 [L3] @0 send-later Devaddr=2001:0db8:85a3:0000:0000:0000:0000:0001 '
+         'Packet=60123456001e111efe800000000000000000000000000001fe80000000000000000000000000000216321633001e0000410200010ab3666f6f0362617206414243443d3d466b3d65746830ff8401822020264568656c6c6f'],
+ 'state': {'init': {'links': [{'delay': 1, 'from': 0, 'to': 1},
+                              {'delay': 1, 'from': 1, 'to': 0}]},
+           'node_table': {0: {'config': {},
+                              'id': 0,
+                              'state': {'fragment': [],
+                                        'reassemble': [],
+                                        'rule-manager': None,
+                                        'state': 'XXX - need to be added'}},
+                          1: {'config': {},
+                              'id': 1,
+                              'state': {'fragment': [],
+                                        'reassemble': [],
+                                        'rule-manager': None,
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': []}
+{'callback_name': 'schc_send',
+ 'class_name': 'SCHCProtocol',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 0,
+ 'log': ['1 [schc] @0 recv-from-L3 -> 2001:0db8:85a3:0000:0000:0000:0000:0001 '
+         "bytearray(b'`\\x124V\\x00\\x1e\\x11\\x1e\\xfe\\x80\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\xfe\\x80\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x02\\x162\\x163\\x00\\x1e\\x00\\x00A\\x02\\x00\\x01\\n\\xb3foo\\x03bar\\x06ABCD==Fk=eth0\\xff\\x84\\x01\\x82  "
+         "&Ehello')",
+         '1 [schc] @0 fragmentation rule_id=12'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ['r:12/6 (noA) DTAG=1 W=- FCN=All-0', '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 1,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         '1 [sim] send-packet 0->None '
+         "bytearray(b'1\\x0c\\x02F\\x8a\\xc0\\x03\\xc2#')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'310c02468ac003c223'  ",
+           '\t\t\t-----------  9--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 3,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         '1 [sim] send-packet 0->None '
+         "bytearray(b'1\\x1b\\xfa\\x00\\x00\\x00\\x00\\x00\\x00')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'311bfa000000000000'  ",
+           '\t\t\t-----------  9--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 5,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         '1 [sim] send-packet 0->None '
+         "bytearray(b'1\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'310000000000000000'  ",
+           '\t\t\t-----------  9--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 7,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         '1 [sim] send-packet 0->None '
+         "bytearray(b'1\\x00\\x1f\\xe8\\x00\\x00\\x00\\x00\\x00')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'31001fe80000000000'  ",
+           '\t\t\t-----------  9--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 9,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- KO -----------------------',
+         '1 [sim] packet was lost 0->None'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ['r:12/6 (noA) DTAG=1 W=- FCN=All-0', '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 10,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- KO -----------------------',
+         '1 [sim] packet was lost 0->None'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ['r:12/6 (noA) DTAG=1 W=- FCN=All-0', '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 11,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- KO -----------------------',
+         '1 [sim] packet was lost 0->None'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ['r:12/6 (noA) DTAG=1 W=- FCN=All-0', '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 12,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         "1 [sim] send-packet 0->None bytearray(b'1\\x13foo\\x03bar')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'3113666f6f03626172'  ",
+           '\t\t\t-----------  9--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 14,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         '1 [sim] send-packet 0->None '
+         "bytearray(b'1\\x00\\xc8(Hh\\x87\\xa7\\xa8')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'3100c828486887a7a8'  ",
+           '\t\t\t-----------  9--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 16,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         '1 [sim] send-packet 0->None '
+         "bytearray(b'1\\x19\\xac\\xf5\\x95\\xd1\\xa0\\xc3\\xfe')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'3119acf595d1a0c3fe'  ",
+           '\t\t\t-----------  9--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           '|----  9------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 18,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         '1 [sim] send-packet 0->None '
+         'bytearray(b\'1\\x02\\x00\\xc1\\x10\\x10\\x13"\\xb4\')',
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'310200c110101322b4'  ",
+           '\t\t\t-----------  9--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           '|----  5------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 20,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         "1 [sim] send-packet 0->None bytearray(b'1\\x06V\\xc6\\xc6')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'310656c6c6'  ",
+           '\t\t\t-----------  5--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-0',
+           'r:12/6 (noA) DTAG=1 W=- FCN=All-1',
+           '|----  6------------->']}
+{'callback_name': 'send_packet',
+ 'class_name': 'SimulLayer2',
+ 'clock': 1,
+ 'event': 'sched-post-event',
+ 'event-id': 22,
+ 'log': ['1 [sim] ----------------------- SEND PACKET -----------------------',
+         '1 [sim] ----------------------- OK -----------------------',
+         "1 [sim] send-packet 0->None bytearray(b'1\\xf9\\xdd\\xb8\\xd5~')",
+         '1 [node] @1 ----------------------- RECEIVED PACKET '
+         '-----------------------',
+         '1 [node] @1 recv from 0'],
+ 'state': {'node_table': {0: {'state': {'fragment': [{'dtag': 1,
+                                                      'rule_id': 12,
+                                                      'rule_id_size': 6,
+                                                      'session': {'state': 'XXX '
+                                                                           '- '
+                                                                           'need '
+                                                                           'to '
+                                                                           'be '
+                                                                           'added',
+                                                                  'type': 'no-ack'}}],
+                                        'reassemble': [],
+                                        'state': 'XXX - need to be added'}},
+                          1: {'state': {'fragment': [],
+                                        'reassemble': [{'dtag': 1,
+                                                        'rule_id': 12,
+                                                        'rule_id_size': 6,
+                                                        'session': {'state': 'XXX '
+                                                                             '- '
+                                                                             'need '
+                                                                             'to '
+                                                                             'be '
+                                                                             'added',
+                                                                    'type': 'no-ack'}}],
+                                        'state': 'XXX - need to be added'}}}},
+ 'trace': ["> b'31f9ddb8d57e'  ",
+           '\t\t\t-----------  6--------->|',
+           '\t\t\tr:12/6 (noA) DTAG=1 W=- FCN=All-1',
+           "b'60123456001e111efe800000000000000000000000000001fe800000000009b337b781b130b90320a121a21e9ea3359eb2ba34187fc200c110101322b432b6363780'",
+           "ERROR: MIC mismatched. packet bytearray(b'\\xce\\xed\\xc6\\xab') "
+           "!= result b'%\\xd2\\xa0z'"]}
