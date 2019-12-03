@@ -221,7 +221,38 @@ class FragmentNoAck(FragmentBase):
         """
         args = (schc_frag.packet.get_content(), '*',
                 transmit_callback)
+<<<<<<< Updated upstream:src/schcsend.py
         print("frag sent:", schc_frag.__dict__)
+=======
+        dprint("frag sent:", schc_frag.__dict__)
+        if self.rule[T_FRAG][T_FRAG_PROF][T_FRAG_DTAG] == 0:
+            w_dtag = '-'
+        else:
+            w_dtag = schc_frag.dtag
+
+        if self.rule[T_FRAG][T_FRAG_PROF][T_FRAG_W] == 0:
+            w_w = '-'
+        else:
+            w_w = schc_frag.win
+
+        all1 = 2**self.rule[T_FRAG][T_FRAG_PROF][T_FRAG_FCN]-1
+        if schc_frag.fcn == all1:
+            w_fcn = "All-1"
+        elif schc_frag.fcn == 0:
+            w_fcn = "All-0"
+        else:
+            w_fcn = schc_frag.fcn
+
+        dtrace ("r:{}/{} (noA) DTAG={} W={} FCN={}".format(
+            self.rule[T_RULEID],
+            self.rule[T_RULEIDLENGTH],
+            w_dtag,
+            w_w,
+            w_fcn
+            ))
+        dtrace ("|----{:10}------------->".format(len(schc_frag.packet._content)))
+
+>>>>>>> Stashed changes:src/frag_send.py
         self.protocol.scheduler.add_event(0, self.protocol.layer2.send_packet,
                                           args)
 
